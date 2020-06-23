@@ -128,7 +128,7 @@ var itemlist_ca_id = "<?php echo $ca_id; ?>";
         // where 된 전체 상품수
         $total_count = $list->total_count;
         // 전체 페이지 계산
-        $total_page  = ceil($total_count / $items);
+        //$total_page  = ceil($total_count / $items);
     }
     else
     {
