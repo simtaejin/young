@@ -67,7 +67,7 @@ add_javascript('<script src="'.G5_JS_URL.'/shop.list.action.js"></script>', 10);
 <div class="contents">
 <?php
 
-echo $ca['ca_2'];
+echo $ca['ca_2'];"</br>";
 echo $ca['ca_3'];
 
 $i=0;

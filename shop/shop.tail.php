@@ -14,7 +14,7 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 <div id="ft">
 
 
-    <div id="ft_copy">Copyright &copy; 2001-2013 <?php echo $default['de_admin_company_name']; ?>. All Rights Reserved.</div>
+    <div id="ft_copy">Copyright &copy; 2020 Linkmoum. All Rights Reserved.</div>
 </div>
 
 <?php

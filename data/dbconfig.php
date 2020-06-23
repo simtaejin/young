@@ -2,8 +2,8 @@
 if (!defined('_GNUBOARD_')) exit;
 define('G5_MYSQL_HOST', 'localhost');
 define('G5_MYSQL_USER', 'root');
-define('G5_MYSQL_PASSWORD', '');
-define('G5_MYSQL_DB', 'young');
+define('G5_MYSQL_PASSWORD', 'feieka!%$65!AfDe%&');
+define('G5_MYSQL_DB', 'linkmoum');
 define('G5_MYSQL_SET_MODE', true);
 
 define('G5_TABLE_PREFIX', 'g5_');
