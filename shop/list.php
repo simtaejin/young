@@ -147,6 +147,7 @@ var itemlist_ca_id = "<?php echo $ca_id; ?>";
     echo '<div id="sct_thtml">'.conv_content($ca['ca_tail_html'], 1).'</div>';
 
 ?>
+    </br></br>
 </div>
 <!-- } 상품 목록 끝 -->
 
