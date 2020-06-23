@@ -66,6 +66,10 @@ add_javascript('<script src="'.G5_JS_URL.'/shop.list.action.js"></script>', 10);
 </style>
 <div class="contents">
 <?php
+
+echo $ca['ca_2_subj'];
+echo $ca['ca_3_subj'];
+
 $i=0;
 foreach((array) $list as $row){
 

@@ -100,6 +100,8 @@ class item_list
     // 외부에서 쿼리문을 넘겨줄 경우에 담아두는 변수
     protected $query = "";
 
+    protected $ca_info = "";
+
     // $type        : 상품유형 (기본으로 1~5까지 사용)
     // $list_skin   : 상품리스트를 노출할 스킨을 설정합니다. 스킨위치는 skin/shop/쇼핑몰설정스킨/type??.skin.php
     // $list_mod    : 1줄에 몇개의 상품을 노출할지를 설정합니다.
@@ -264,6 +266,10 @@ class item_list
             $this->total_count = @sql_num_rows($result);
 
         } else {
+            $sql = " select * from {$g5['g5_shop_category_table']} where ca_id = '$this->ca_id' and ca_use = '1'  ";
+            $ca = sql_fetch($sql);
+
+            $this->ca_info = $ca;
 
             $where = array();
             if ($this->use) {
