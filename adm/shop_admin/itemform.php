@@ -229,7 +229,7 @@ if(!sql_query(" select it_skin from {$g5['g5_shop_item_table']} limit 1", false)
             <col class="grid_3">
         </colgroup>
         <tbody>
-    
+
         <tr>
             <th scope="row"><label for="it_name">타이틀</label></th>
             <td colspan="2">
@@ -543,7 +543,7 @@ function categorychange(f)
 
     if (f.w.value == "" && idx)
     {
-        f.it_use.checked = ca_use[idx] ? true : false;
+        //f.it_use.checked = ca_use[idx] ? true : false;
         f.it_stock_qty.value = ca_stock_qty[idx];
         f.it_sell_email.value = ca_sell_email[idx];
     }
