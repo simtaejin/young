@@ -309,7 +309,7 @@ class item_list
             $sql_where = " where " . implode(" and ", $where);
             //$sql_limit = " limit " . $this->from_record . " , " . ($this->list_mod * $this->list_row);
 
-            $sql = $sql_select . $sql_common . $sql_where . $sql_order . $sql_limit;
+            $sql = $sql_select . $sql_common . $sql_where . $sql_order;
 
             $result = sql_query($sql);
 
