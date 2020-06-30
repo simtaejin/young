@@ -160,6 +160,7 @@ $listall = '<a href="'.$_SERVER['SCRIPT_NAME'].'" class="ov_listall">전체목�
             $it_point .= '%';
     ?>
     <tr class="<?php echo $bg; ?>">
+        <input type="hidden" name="it_use[<?php echo $i; ?>]" value="<?php echo $row['it_use']; ?>">
         <input type="hidden" name="it_id[<?php echo $i; ?>]" value="<?php echo $row['it_id']; ?>">
         <td rowspan="3" class="td_chk">
             <label for="chk_<?php echo $i; ?>" class="sound_only"><?php echo get_text($row['it_name']); ?></label>
