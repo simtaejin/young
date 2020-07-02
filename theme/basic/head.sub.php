@@ -98,12 +98,18 @@ if(!defined('G5_IS_ADMIN'))
 
     <style type="text/css">
         .hbox-menu {
-            margin-top:4px;
+            /*margin-top:4px;*/
             width:100%;
-            border-top:1px solid #615C55;
-            border-bottom:1px solid #615C55;
+            border:none;
+            background-color: white;
             display: inline-block;
             overflow: hidden;
+            height:60px;
+            /*position: absolute;*/
+            /*width: auto;*/
+            /*height: auto;*/
+            vertical-align: middle;
+            line-height: 60px;
         }
         .hbox-menu li {
             float: left; width:11%;
@@ -111,11 +117,11 @@ if(!defined('G5_IS_ADMIN'))
         .hbox-menu a {
             display: block;
             text-align:center;
-            height: 50px;
-            line-height: 50px;
-            background-color: #F0E7DB;
-            color: #666666;
-            border-right: 1px solid #615C55;
+            /*height: 50px;*/
+            /*line-height: 50px;*/
+            /*background-color: #F0E7DB;*/
+            /*color: #666666;*/
+            /*border-right: 1px solid #615C55;*/
             font-weight:bold;
         }
         .hbox-menu li:last-child a {

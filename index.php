@@ -23,15 +23,15 @@ include_once(G5_SHOP_PATH.'/shop.head.php');
 
     <div>
         <ul class="hbox-menu">
-            <li><a href="http://google.com" target="_blank">google</a></li>
-            <li><a href="http://naver.com" target="_blank">naver</a></li>
-            <li><a href="http://daum.net" target="_blank">daum</a></li>
-            <li><a href="http://nate.com" target="_blank">nate</a></li>
-            <li><a href="http://zum.co.kr" target="_blank">zum</a></li>
-            <li><a href="http://www.youtube.com" target="_blank">youtube</a></li>
-            <li><a href="http://www.instagram.com" target="_blank">instagram</a></li>
-            <li><a href="http://www.facebook.com" target="_blank">facebook</a></li>
-            <li><a href="http://twitter.com" target="_blank">twitter</a></li>
+            <li><a href="http://google.com" target="_blank"><img src="http://linkmoum.co.kr/img/google.png"></a></li>
+            <li><a href="http://naver.com" target="_blank"><img src="http://linkmoum.co.kr/img/naver.png"></a></li>
+            <li><a href="http://daum.net" target="_blank"><img src="http://linkmoum.co.kr/img/daum.png"></a></li>
+            <li><a href="http://nate.com" target="_blank"><img src="http://linkmoum.co.kr/img/nate.png"></a></li>
+            <li><a href="http://zum.co.kr" target="_blank"><img src="http://linkmoum.co.kr/img/zum.png"></a></li>
+            <li><a href="http://www.youtube.com" target="_blank"><img src="http://linkmoum.co.kr/img/youtube.png"></a></li>
+            <li><a href="http://www.instagram.com" target="_blank"><img src="http://linkmoum.co.kr/img/instagram.png"></a></li>
+            <li><a href="http://www.facebook.com" target="_blank"><img src="http://linkmoum.co.kr/img/facebook.png"></a></li>
+            <li><a href="http://twitter.com" target="_blank"><img src="http://linkmoum.co.kr/img/twitter.png"></a></li>
         </ul>
     </div>
 

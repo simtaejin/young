@@ -37,7 +37,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_JS_URL.'/owlcarousel/owl.carou
 ?>
 
 <!-- 전체 콘텐츠 시작 { -->
-<div id="wrapper" style="padding-top: 50px" class="<?php echo implode(' ', $wrapper_class); ?>">
+<div id="wrapper" class="<?php echo implode(' ', $wrapper_class); ?>">
 
     <!-- #container 시작 { -->
     <div id="container" >
