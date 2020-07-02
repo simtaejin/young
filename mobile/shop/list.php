@@ -72,67 +72,12 @@ var g5_shop_url = "<?php echo G5_SHOP_URL; ?>";
         $cate_skin = G5_MSHOP_SKIN_PATH.'/listcategory.skin.php';
     include $cate_skin;
 
-    // 테마미리보기 베스트상품 재설정
-    if(defined('_THEME_PREVIEW_') && _THEME_PREVIEW_ === true) {
-        if(isset($theme_config['ca_mobile_list_best_mod']))
-            $theme_config['ca_mobile_list_best_mod'] = (isset($tconfig['ca_mobile_list_best_mod']) && $tconfig['ca_mobile_list_best_mod']) ? $tconfig['ca_mobile_list_best_mod'] : 0;
-        if(isset($theme_config['ca_mobile_list_best_row']))
-            $theme_config['ca_mobile_list_best_row'] = (isset($tconfig['ca_mobile_list_best_row']) && $tconfig['ca_mobile_list_best_row']) ? $tconfig['ca_mobile_list_best_row'] : 0;
-    }
-
-    // 분류 Best Item
-    $list_mod = (isset($theme_config['ca_mobile_list_best_mod']) && $theme_config['ca_mobile_list_best_mod']) ? (int)$theme_config['ca_mobile_list_best_mod'] : $ca['ca_mobile_list_mod'];
-    $list_row = (isset($theme_config['ca_mobile_list_best_row']) && $theme_config['ca_mobile_list_best_row']) ? (int)$theme_config['ca_mobile_list_best_row'] : $ca['ca_mobile_list_row'];
-    $limit = $list_mod * $list_row;
-    $best_skin = G5_MSHOP_SKIN_PATH.'/list.best.10.skin.php';
-
-    $sql = " select *
-                from {$g5['g5_shop_item_table']}
-                where ( ca_id like '$ca_id%' or ca_id2 like '$ca_id%' or ca_id3 like '$ca_id%' )
-                  and it_use = '1'
-                  and it_type4 = '1'
-                order by it_order, it_id desc
-                limit 0, $limit ";
-
-    $list = new item_list($best_skin, $list_mod, $list_row, $ca['ca_mobile_img_width'], $ca['ca_mobile_img_height']);
-    $list->set_query($sql);
-    $list->set_mobile(true);
-    $list->set_view('it_img', true);
-    $list->set_view('it_id', false);
-    $list->set_view('it_name', true);
-    $list->set_view('it_price', true);
-    echo $list->run();
-
-    // 상품 출력순서가 있다면
-    if ($sort != "")
-        $order_by = $sort.' '.$sortodr.' , it_order, it_id desc';
-    else
-        $order_by = 'it_order, it_id desc';
-
-    $error = '<p class="sct_noitem">등록된 상품이 없습니다.</p>';
-
     // 리스트 스킨
-    $skin_file = is_include_path_check($skin_dir.'/'.$ca['ca_mobile_skin']) ? $skin_dir.'/'.$ca['ca_mobile_skin'] : $skin_dir.'/list.10.skin.php';
+    $skin_file = is_include_path_check($skin_dir.'/'.$ca['ca_mobile_skin']) ? $skin_dir.'/list.10.skin.php' : $skin_dir.'/list.10.skin.php';
 
     if (file_exists($skin_file)) {
 
-        echo '<div id="sct_sortlst">';
 
-        $sort_skin = $skin_dir.'/list.sort.skin.php';
-        if(!is_file($sort_skin))
-            $sort_skin = G5_MSHOP_SKIN_PATH.'/list.sort.skin.php';
-        include $sort_skin;
-    
-            // 상품 보기 타입 변경 버튼
-        $sub_skin = $skin_dir.'/list.sub.skin.php';
-        if(!is_file($sub_skin))
-            $sub_skin = G5_MSHOP_SKIN_PATH.'/list.sub.skin.php';
-
-        if(is_file($sub_skin)){
-            include $sub_skin;
-        }
-
-        echo '</div>';
 
         // 총몇개
         $items = $ca['ca_mobile_list_mod'] * $ca['ca_mobile_list_row'];
@@ -141,7 +86,7 @@ var g5_shop_url = "<?php echo G5_SHOP_URL; ?>";
         // 시작 레코드 구함
         $from_record = ($page - 1) * $items;
 
-        $list = new item_list($skin_file, $ca['ca_mobile_list_mod'], $ca['ca_mobile_list_row'], $ca['ca_mobile_img_width'], $ca['ca_mobile_img_height']);
+        $list = new item_list($skin_file, '1', '1', $ca['ca_mobile_img_width'], $ca['ca_mobile_img_height']);
         $list->set_category($ca['ca_id'], 1);
         $list->set_category($ca['ca_id'], 2);
         $list->set_category($ca['ca_id'], 3);
@@ -166,19 +111,7 @@ var g5_shop_url = "<?php echo G5_SHOP_URL; ?>";
     }
     ?>
 
-    <?php
-    if($i > 0 && $total_count > $items) {
-        $qstr1 .= 'ca_id='.$ca_id;
-        $qstr1 .='&sort='.$sort.'&sortodr='.$sortodr;
-        $ajax_url = G5_SHOP_URL.'/ajax.list.php?'.$qstr1.'&use_sns=1';
-    ?>
-    <div class="li_more">
-        <p id="item_load_msg"><img src="<?php echo G5_SHOP_CSS_URL; ?>/img/loading.gif" alt="로딩이미지" ><br>잠시만 기다려주세요.</p>
-        <div class="li_more_btn">
-            <button type="button" id="btn_more_item" data-url="<?php echo $ajax_url; ?>" data-page="<?php echo $page; ?>">더보기 +</button>
-        </div>
-    </div>
-    <?php } ?>
+
 
     <?php
     // 하단 HTML

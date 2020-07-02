@@ -1,37 +1,29 @@
 <?php
 include_once('./_common.php');
 
-
 define("_INDEX_", TRUE);
+
+if (G5_IS_MOBILE) {
+    include_once(G5_MOBILE_PATH.'/index.php');
+    return;
+}
 
 include_once(G5_SHOP_PATH.'/shop.head.php');
 
 
-    function get_mshop_category($ca_id, $len)
-    {
-        global $g5;
-
-        $sql = " select ca_id, ca_name, ca_1 from {$g5['g5_shop_category_table']}
-        where ca_use = '1' ";
-        if($ca_id)
-        $sql .= " and ca_id like '$ca_id%' ";
-        $sql .= " and length(ca_id) = '$len' order by ca_order, ca_id ";
-
-        return $sql;
-    }
-    ?>
+?>
 
     <div>
         <ul class="hbox-menu">
-            <li><a href="http://google.com" target="_blank"><img src="http://linkmoum.co.kr/img/google.png"></a></li>
-            <li><a href="http://naver.com" target="_blank"><img src="http://linkmoum.co.kr/img/naver.png"></a></li>
-            <li><a href="http://daum.net" target="_blank"><img src="http://linkmoum.co.kr/img/daum.png"></a></li>
-            <li><a href="http://nate.com" target="_blank"><img src="http://linkmoum.co.kr/img/nate.png"></a></li>
-            <li><a href="http://zum.co.kr" target="_blank"><img src="http://linkmoum.co.kr/img/zum.png"></a></li>
-            <li><a href="http://www.youtube.com" target="_blank"><img src="http://linkmoum.co.kr/img/youtube.png"></a></li>
-            <li><a href="http://www.instagram.com" target="_blank"><img src="http://linkmoum.co.kr/img/instagram.png"></a></li>
-            <li><a href="http://www.facebook.com" target="_blank"><img src="http://linkmoum.co.kr/img/facebook.png"></a></li>
-            <li><a href="http://twitter.com" target="_blank"><img src="http://linkmoum.co.kr/img/twitter.png"></a></li>
+            <li><a href="http://google.com" target="_blank">google</a></li>
+            <li><a href="http://naver.com" target="_blank">naver</a></li>
+            <li><a href="http://daum.net" target="_blank">daum</a></li>
+            <li><a href="http://nate.com" target="_blank">nate</a></li>
+            <li><a href="http://zum.co.kr" target="_blank">zum</a></li>
+            <li><a href="http://www.youtube.com" target="_blank">youtube</a></li>
+            <li><a href="http://www.instagram.com" target="_blank">instagram</a></li>
+            <li><a href="http://www.facebook.com" target="_blank">facebook</a></li>
+            <li><a href="http://twitter.com" target="_blank">twitter</a></li>
         </ul>
     </div>
 
@@ -76,14 +68,14 @@ include_once(G5_SHOP_PATH.'/shop.head.php');
                 $ii++;
             }
 
-                if ($ii%3 > 0) {
-                    for ($y=0; $y<3-($ii%3); $y++) {
-            ?>
-                <li class="cate_li_1" style="text-align: center; width: 33.3%; " >
-                </li>
-            <?php
-                    }
+            if ($ii%3 > 0) {
+                for ($y=0; $y<3-($ii%3); $y++) {
+                    ?>
+                    <li class="cate_li_1" style="text-align: center; width: 33.3%; " >
+                    </li>
+                    <?php
                 }
+            }
             echo '</ul>'.PHP_EOL;
             ?>
         </div>

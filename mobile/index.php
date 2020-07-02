@@ -1,35 +1,85 @@
 <?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
-if(defined('G5_THEME_PATH')) {
-    require_once(G5_THEME_PATH.'/index.php');
-    return;
-}
-
 include_once(G5_MOBILE_PATH.'/head.php');
+
 ?>
 
-<!-- 메인화면 최신글 시작 -->
-<?php
-//  최신글
-$sql = " select bo_table
-            from `{$g5['board_table']}` a left join `{$g5['group_table']}` b on (a.gr_id=b.gr_id)
-            where a.bo_device <> 'pc' ";
-if(!$is_admin) {
-    $sql .= " and a.bo_use_cert = '' ";
-}
-$sql .= " order by b.gr_order, a.bo_order ";
-$result = sql_query($sql);
-for ($i=0; $row=sql_fetch_array($result); $i++) {
-    // 이 함수가 바로 최신글을 추출하는 역할을 합니다.
-    // 스킨은 입력하지 않을 경우 관리자 > 환경설정의 최신글 스킨경로를 기본 스킨으로 합니다.
+    <script src="<?php echo G5_JS_URL; ?>/swipe.js"></script>
+    <script src="<?php echo G5_JS_URL; ?>/shop.mobile.main.js"></script>
 
-    // 사용방법
-    // latest(스킨, 게시판아이디, 출력라인, 글자수);
-    echo latest('basic', $row['bo_table'], 12, 25);
-}
-?>
-<!-- 메인화면 최신글 끝 -->
+    <div>
+        <ul class="hbox-menu">
+            <li><a href="http://google.com" target="_blank">google</a></li>
+            <li><a href="http://naver.com" target="_blank">naver</a></li>
+            <li><a href="http://daum.net" target="_blank">daum</a></li>
+            <li><a href="http://nate.com" target="_blank">nate</a></li>
+            <li><a href="http://zum.co.kr" target="_blank">zum</a></li>
+            <li><a href="http://www.youtube.com" target="_blank">youtube</a></li>
+            <li><a href="http://www.instagram.com" target="_blank">instagram</a></li>
+            <li><a href="http://www.facebook.com" target="_blank">facebook</a></li>
+            <li><a href="http://twitter.com" target="_blank">twitter</a></li>
+        </ul>
+    </div>
+    <div id="category"  >
+        <div class="ct_wr" >
+            <?php
+            $mshop_ca_res1 = sql_query(get_mshop_category('', 2));
+
+            for($i=0; $mshop_ca_row1=sql_fetch_array($mshop_ca_res1); $i++) {
+                if($i == 0)
+                    echo '<ul class="cate" style="">'.PHP_EOL;
+                ?>
+                <li class="cate_li_1" style="text-align: center; width: 100%; " >
+                <a href="<?php echo shop_category_url($mshop_ca_row1['ca_id']); ?>" class="cate_li_1_a"><?php echo get_text($mshop_ca_row1['ca_name']); ?></a>
+                <?php
+                if (!empty($mshop_ca_row1['ca_1'])) {
+                    $limits = " limit 0, " . $mshop_ca_row1['ca_1'];
+                } else {
+                    $limits = "";
+                }
+
+                $mshop_ca_res2_sql = " select * from `{$g5['g5_shop_item_table']}` where it_use = '1' and ca_id like '{$mshop_ca_row1['ca_id']}%'  order by it_order, it_id desc". $limits;
+                $mshop_ca_res2_result = sql_query($mshop_ca_res2_sql);
+                $ii = 0;
+                for($j=0; $mshop_ca_row2=sql_fetch_array($mshop_ca_res2_result); $j++) {
+
+                    if($j == 0)
+                        echo '<ul class=" sub_cate1">'.PHP_EOL;
+                    ?>
+                    <li class="cate_li_2" style="float:left; width: 33.3%">
+                        <a href="<?php echo $mshop_ca_row2['it_origin']; ?>" target="_blank"><?php echo $mshop_ca_row2['it_name']; ?></a>
+                    </li>
+                    <?php
+
+
+                    $ii++;
+                }
+                if ($ii%3 > 0) {
+                    for ($y=0; $y<3-($ii%3); $y++) {
+                        ?>
+                        <li class="cate_li_2" style="float:left;width: 33.3%; " >
+                            <a href="" target="_blank">&nbsp;</a>
+                        </li>
+                        <?php
+                    }
+                }
+
+                if($j > 0)
+                    echo '</ul>'.PHP_EOL;
+                ?>
+                </li>
+                <?php
+            }
+            echo '</ul>'.PHP_EOL;
+            ?>
+        </div>
+    </div>
+
+    <script>
+        $("#container").addClass("idx-container");
+    </script>
+
 
 <?php
 include_once(G5_MOBILE_PATH.'/tail.php');

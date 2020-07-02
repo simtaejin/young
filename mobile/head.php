@@ -2,7 +2,7 @@
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
 if(defined('G5_THEME_PATH')) {
-    require_once(G5_THEME_PATH.'/head.php');
+    require_once(G5_MSHOP_PATH.'/shop.head.php');
     return;
 }
 
@@ -20,10 +20,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
     <div class="to_content"><a href="#container">본문 바로가기</a></div>
 
-    <?php
-    if(defined('_INDEX_')) { // index에서만 실행
-        include G5_MOBILE_PATH.'/newwin.inc.php'; // 팝업레이어
-    } ?>
+
 
     <div id="hd_wrapper">
 
@@ -74,7 +71,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             	<li class="hd_nb1"><a href="<?php echo G5_BBS_URL ?>/faq.php" id="snb_faq"><i class="fa fa-question" aria-hidden="true"></i>FAQ</a></li>
                 <li class="hd_nb2"><a href="<?php echo G5_BBS_URL ?>/qalist.php" id="snb_qa"><i class="fa fa-comments" aria-hidden="true"></i>1:1문의</a></li>
                 <li class="hd_nb3"><a href="<?php echo G5_BBS_URL ?>/current_connect.php" id="snb_cnt"><i class="fa fa-users" aria-hidden="true"></i>접속자 <span><?php echo connect('basic'); // 현재 접속자수 ?></span></a></li>
-                <li class="hd_nb4"><a href="<?php echo G5_BBS_URL ?>/new.php" id="snb_new"><i class="fa fa-history" aria-hidden="true"></i>새글</a></li>   
+                <li class="hd_nb4"><a href="<?php echo G5_BBS_URL ?>/new.php" id="snb_new"><i class="fa fa-history" aria-hidden="true"></i>새글</a></li>
             </ul>
         </div>
 
@@ -163,7 +160,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
             $(".btn_gnb_op").click(function(){
                 $(this).toggleClass("btn_gnb_cl").next(".gnb_2dul").slideToggle(300);
-                
+
             });
 
             $(".hd_closer").on("click", function() {
@@ -173,7 +170,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             });
         });
         </script>
-        
+
     </div>
 </header>
 

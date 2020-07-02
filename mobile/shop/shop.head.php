@@ -1,10 +1,6 @@
 <?php
 if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 
-if(defined('G5_THEME_PATH')) {
-    require_once(G5_THEME_MSHOP_PATH.'/shop.head.php');
-    return;
-}
 
 include_once(G5_PATH.'/head.sub.php');
 include_once(G5_LIB_PATH.'/outlogin.lib.php');
@@ -26,13 +22,7 @@ include_once(G5_LIB_PATH.'/latest.lib.php');
 
     <div id="hd_wr">
         <div id="logo"><a href="<?php echo G5_SHOP_URL; ?>/"><img src="<?php echo G5_DATA_URL; ?>/common/mobile_logo_img" alt="<?php echo $config['cf_title']; ?> 메인"></a></div>
-        <div id="hd_btn">
-            <button type="button" id="btn_hdcate"><i class="fa fa-bars"></i><span class="sound_only">분류</span></button>
-            <button type="button" id="btn_hdsch"><i class="fa fa-search"></i><span class="sound_only">검색열기</span></button>
-            <a href="<?php echo G5_SHOP_URL; ?>/mypage.php" id="btn_hduser"><i class="fa fa-user"></i><span class="sound_only">마이페이지</span></a>
-            <a href="<?php echo G5_SHOP_URL; ?>/cart.php" id="btn_hdcart"><i class="fa fa-shopping-cart"></i><span class="sound_only">장바구니</span><span class="cart-count"><?php echo get_boxcart_datas_count(); ?></span></a>
-
-        </div>
+       
     </div>
 
     <form name="frmsearch1" action="<?php echo G5_SHOP_URL; ?>/search.php" onsubmit="return search_submit(this);">
@@ -59,15 +49,13 @@ include_once(G5_LIB_PATH.'/latest.lib.php');
 
         return true;
     }
-    </script>     
-
-    <?php include_once(G5_MSHOP_PATH.'/category.php'); // 분류 ?>
+    </script>
 
 
     <script>
     jQuery(function($){
         $( document ).ready( function() {
-            
+
             function catetory_menu_fn( is_open ){
                 var $cagegory = $("#category");
 
@@ -98,7 +86,7 @@ include_once(G5_LIB_PATH.'/latest.lib.php');
             $("#hd_sch .btn_close").on("click", function() {
                 $("#hd_sch").hide();
             });
-            
+
             //타이틀 영역고정
             var jbOffset = $( '#container').offset();
             $( window ).scroll( function() {

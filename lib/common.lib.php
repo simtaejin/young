@@ -3853,4 +3853,17 @@ function option_array_checked($option, $arr=array()){
 
     return $checked;
 }
+
+    function get_mshop_category($ca_id, $len)
+    {
+        global $g5;
+
+        $sql = " select ca_id, ca_name, ca_1 from {$g5['g5_shop_category_table']}
+        where ca_use = '1' ";
+        if($ca_id)
+        $sql .= " and ca_id like '$ca_id%' ";
+        $sql .= " and length(ca_id) = '$len' order by ca_order, ca_id ";
+
+        return $sql;
+    }
 ?>
