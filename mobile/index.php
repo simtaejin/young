@@ -46,9 +46,11 @@ include_once(G5_MOBILE_PATH.'/head.php');
 
                     if($j == 0)
                         echo '<ul class=" sub_cate1">'.PHP_EOL;
+
+                        $item_link = $mshop_ca_row2['it_brand'] ? $mshop_ca_row2['it_brand'] : $mshop_ca_row2['it_origin'];
                     ?>
                     <li class="cate_li_2" style="float:left; width: 33.3%">
-                        <a href="<?php echo $mshop_ca_row2['it_origin']; ?>" target="_blank"><?php echo $mshop_ca_row2['it_name']; ?></a>
+                        <a href="<?php echo $item_link; ?>" target="_blank"><?php echo $mshop_ca_row2['it_name']; ?></a>
                     </li>
                     <?php
 

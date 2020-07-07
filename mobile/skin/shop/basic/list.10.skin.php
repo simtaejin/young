@@ -76,11 +76,9 @@ add_javascript('<script src="'.G5_JS_URL.'/shop.list.action.js"></script>', 10);
         if( empty($row) ) continue;
         $i++;
 
-//    echo "<xmp>";
-//    print_r($list);
-//    echo "</xmp>";
+        $item_link = $row['it_brand'] ? $row['it_brand'] : $row['it_origin'];
         ?>
-        <div class="item" onclick="window.open('<?php echo $row['it_origin'];?>')" >
+        <div class="item" onclick="window.open('<?php echo $item_link;?>')" >
             <div class="image">
                 <?php echo get_it_image($row['it_id'], "200", "100", '', '', stripslashes($row['it_name']), $row['it_origin']); ?>
             </div>

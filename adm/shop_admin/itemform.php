@@ -249,6 +249,18 @@ if(!sql_query(" select it_skin from {$g5['g5_shop_item_table']} limit 1", false)
             </td>
         </tr>
         <tr>
+            <th scope="row"><label for="it_origin">모바일 URL</label></th>
+            <td>
+                <input type="text" name="it_brand" value="<?php echo get_text($it['it_brand']); ?>" id="it_brand" class="frm_input" size="40">
+            </td>
+            <td class="td_grpset">
+                <input type="checkbox" name="chk_ca_it_origin" value="1" id="chk_ca_it_origin">
+                <label for="chk_ca_it_origin">분류적용</label>
+                <input type="checkbox" name="chk_all_it_origin" value="1" id="chk_all_it_origin">
+                <label for="chk_all_it_origin">전체적용</label>
+            </td>
+        </tr>
+        <tr>
             <th scope="row"><label for="it_basic">기본설명</label></th>
             <td>
                 <input type="text" name="it_basic" value="<?php echo get_text(html_purifier($it['it_basic'])); ?>" id="it_basic" class="frm_input" size="95">
