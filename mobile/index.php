@@ -63,9 +63,26 @@ include_once(G5_MOBILE_PATH.'/head.php');
                 ?>
             </div>
 
+            <div class="col-md-12 px-1">
+                <div class="card bg-white mb-1">
+                    <div class="card-body">
+                        <div class="card-text">
+                            링크모음은 무료포인트 제공 및 무료 혜택으로 이용가능한 신규 웹하드</br> / P2P 순위 사이트 정보를 정리한 업체로서 빠르게 업데이트 진행하고 있습니다.</br>
+                            최신 영화 드라마 애니 예능 모바일 혹은 다른 자료를 이용할수 있으니 이용을 권장 해 드립니다.
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
+    <div class="foot py-5">
+        <div class="container">
+            <p class="m-0 text-center">Copyright © 2000 linkmoum.co.kr All Rights Reserved.</p>
+        </div>
+    </div>
 <?php
 include_once(G5_MOBILE_PATH.'/tail.php');
 ?>
