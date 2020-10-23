@@ -14,7 +14,7 @@ include_once(G5_SHOP_PATH.'/shop.head.php');
 ?>
     <div class="header">
         <div class="container">
-            <a href="/">2020 신규 웹하드 순위 TOP 12</a>
+            <a href="/">링크모음 - 2020 신규 웹하드 순위 TOP 12</a>
         </div>
     </div>
     <div class="container">
@@ -73,7 +73,6 @@ include_once(G5_SHOP_PATH.'/shop.head.php');
 
         </div>
     </div>
-
 
 <?php
 include_once(G5_SHOP_PATH.'/shop.tail.php');

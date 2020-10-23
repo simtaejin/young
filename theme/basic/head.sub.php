@@ -36,11 +36,19 @@ header("Pragma: no-cache"); // HTTP/1.0
     <head>
         <meta charset="utf-8">
         <link rel="canonical" href="http://linkmoum.co.kr">
-        <meta property="og:url"  content="https://linkmoum.co.kr" />
-        <meta property="og:type"  content="website" />
-        <meta property="og:title" content="링크모음_linkmoum 링크모음사이트" />
-        <meta property="og:description" content="각종 링크모음 수집 사이트,무료영화,커뮤니티,유머,웹툰,애니,쇼핑,패션,음악,예술,게임,방송,뉴스,신문,생활,금융,연예 링크정보 제공 사이트" />
-        <meta property="og:image" content="https://linkmoum.co.kr/1.png" />
+        <meta name="robots" content="index,follow" />
+	<meta name="subject" content="신규웹하드 순위 노제휴사이트모음" />
+	<meta name="title" content="신규웹하드 순위 노제휴사이트모음" />
+	<title>신규웹하드 순위 노제휴사이트모음</title>
+	<meta name="author" content="linkmoum">
+	<meta name="description" content="P2P사이트 순위 노제휴 순위 다시보기 영화다시보기 드라마 다시보기 애니 다시보기 중국드라마 다시보기 미국 드라마 다시보기"/>
+	<meta property="og:type" content="website" />
+	<meta property="og:rich_attachment" content="true" />
+	<meta property="og:site_name" content="신규웹하드 순위 노제휴사이트모음" />
+	<meta property="og:title" content="신규웹하드 순위 노제휴사이트모음" />
+	<meta property="og:description" content="P2P사이트 순위 노제휴 순위 다시보기 영화다시보기 드라마 다시보기 애니 다시보기 중국드라마 다시보기 미국 드라마 다시보기" />
+	<meta property="og:url" content="https://linkmoum.co.kr" />
+	<meta property="og:image" content="https://linkmoum.co.kr/1.png" />
 
         <?php
         if (G5_IS_MOBILE) {
