@@ -8,19 +8,19 @@ include_once(G5_MOBILE_PATH.'/head.php');
     <script src="<?php echo G5_JS_URL; ?>/swipe.js"></script>
     <script src="<?php echo G5_JS_URL; ?>/shop.mobile.main.js"></script>
 
-    <div>
-        <ul class="hbox-menu">
-            <li><a href="http://google.com" target="_blank">google</a></li>
-            <li><a href="http://naver.com" target="_blank">naver</a></li>
-            <li><a href="http://daum.net" target="_blank">daum</a></li>
-            <li><a href="http://nate.com" target="_blank">nate</a></li>
-            <li><a href="http://zum.co.kr" target="_blank">zum</a></li>
-            <li><a href="http://www.youtube.com" target="_blank">youtube</a></li>
-            <li><a href="http://www.instagram.com" target="_blank">instagram</a></li>
-            <li><a href="http://www.facebook.com" target="_blank">facebook</a></li>
-            <li><a href="http://twitter.com" target="_blank">twitter</a></li>
-        </ul>
-    </div>
+<!--    <div>-->
+<!--        <ul class="hbox-menu">-->
+<!--            <li><a href="http://google.com" target="_blank">google</a></li>-->
+<!--            <li><a href="http://naver.com" target="_blank">naver</a></li>-->
+<!--            <li><a href="http://daum.net" target="_blank">daum</a></li>-->
+<!--            <li><a href="http://nate.com" target="_blank">nate</a></li>-->
+<!--            <li><a href="http://zum.co.kr" target="_blank">zum</a></li>-->
+<!--            <li><a href="http://www.youtube.com" target="_blank">youtube</a></li>-->
+<!--            <li><a href="http://www.instagram.com" target="_blank">instagram</a></li>-->
+<!--            <li><a href="http://www.facebook.com" target="_blank">facebook</a></li>-->
+<!--            <li><a href="http://twitter.com" target="_blank">twitter</a></li>-->
+<!--        </ul>-->
+<!--    </div>-->
     <div id="category"  >
         <div class="ct_wr" >
             <?php

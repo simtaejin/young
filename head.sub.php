@@ -40,7 +40,18 @@ header("Pragma: no-cache"); // HTTP/1.0
 <!doctype html>
 <html lang="ko">
 <head>
-<meta charset="utf-8">
+    123123
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171614918-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-171614918-1');
+    </script>
+
+    <meta charset="utf-8">
 <?php
 if (G5_IS_MOBILE) {
     echo '<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10">'.PHP_EOL;

@@ -12,6 +12,16 @@ include_once(G5_LIB_PATH.'/latest.lib.php');
 
 
 <header id="hd">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171614918-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-171614918-1');
+</script>
+
     <?php if ((!$bo_table || $w == 's' ) && defined('_INDEX_')) { ?><h1><?php echo $config['cf_title'] ?></h1><?php } ?>
 
     <div id="skip_to_container"><a href="#container">본문 바로가기</a></div>
@@ -21,8 +31,7 @@ include_once(G5_LIB_PATH.'/latest.lib.php');
     } ?>
 
     <div id="hd_wr">
-        <div id="logo"><a href="<?php echo G5_SHOP_URL; ?>/"><img src="<?php echo G5_DATA_URL; ?>/common/mobile_logo_img" alt="<?php echo $config['cf_title']; ?> 메인"></a></div>
-       
+        <div id="logo"><a href="<?php echo G5_URL; ?>/"><img src="<?php echo G5_URL; ?>/img/logo.png" alt="<?php echo $config['cf_title']; ?> 메인"></a></div>
     </div>
 
     <form name="frmsearch1" action="<?php echo G5_SHOP_URL; ?>/search.php" onsubmit="return search_submit(this);">
